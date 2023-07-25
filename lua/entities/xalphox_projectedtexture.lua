@@ -105,8 +105,6 @@ end
 if CLIENT then
 
     function ENT:Update()
-        print("Update 1")
-
         if not IsValid(self.proj) then
             return
         end
@@ -146,7 +144,7 @@ if CLIENT then
         -- Pixvis will return 0 when we're in its bounds, but if we're in its bounds, it almost
         -- certainly is lighting our scene.
         local farz = self:GetFarZ()
-        if LocalPlayer():GetPos():DistToSqr(self:GetPos()) < (farz + 8) ^2 then
+        if LocalPlayer():GetPos():DistToSqr(self:GetPos()) < (farz * 1.2) ^2 then
             return false
         end
 
