@@ -3,7 +3,7 @@ AddCSLuaFile()
 ENT.Type = "point"
 ENT.Base = "base_entity"
 
-ENT.PrintName = "env_projectedtexture2"
+ENT.PrintName = "xalphox_projectedtexture"
 ENT.Author = "Xalphox"
 ENT.Contact = ""
 ENT.Purpose = ""
