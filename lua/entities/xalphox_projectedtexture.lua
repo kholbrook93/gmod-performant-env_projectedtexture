@@ -26,7 +26,6 @@ if CLIENT then
     scale_farz = CreateClientConVar("r_projectedtexture_scalefarz", "1"):GetFloat()
     cvars.AddChangeCallback("r_drawprojectedtextures", function (cv, old, new)
         is_enabled = tonumber(new) or 1
-        print("boop")
     end, "xalphox_projectedtexture")
 
     cvars.AddChangeCallback("r_maxprojectedtextures", function (cv, old, new)
@@ -36,9 +35,7 @@ if CLIENT then
     cvars.AddChangeCallback("r_projectedtexture_scalefarz", function (cv, old, new)
         scale_farz = tonumber(new) or 1
         
-        PrintTable(ents.FindByClass("xalphox_projectedtexture"))
         for k, v in pairs(ents.FindByClass("xalphox_projectedtexture")) do
-            print("scale_farz")
             v:Update()
         end
     end, "xalphox_projectedtexture")
