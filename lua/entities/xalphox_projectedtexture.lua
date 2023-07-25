@@ -1,7 +1,7 @@
 AddCSLuaFile()
 
-ENT.Type = "anim"
-ENT.Base = "base_anim"
+ENT.Type = "point"
+ENT.Base = "base_entity"
 
 ENT.PrintName = "env_projectedtexture2"
 ENT.Author = "Xalphox"
@@ -10,8 +10,8 @@ ENT.Purpose = ""
 ENT.Instructions = ""
 ENT.Editable = true
 
-ENT.Spawnable = true
-ENT.AdminSpawnable = true
+ENT.Spawnable = false
+ENT.AdminSpawnable = false
 
 
 
@@ -46,16 +46,8 @@ end
 
 
 function ENT:Initialize()
-
-    self:SetModel("models/maxofs2d/camera.mdl")
     self:SetStatic(true)
-
-
-    if SERVER then
-        self:PhysicsInit(SOLID_VPHYSICS)
-    else
-        self.PixVis = util.GetPixelVisibleHandle()
-    end
+    self.PixVis = util.GetPixelVisibleHandle()
 end
 
 local KeyValues = {
